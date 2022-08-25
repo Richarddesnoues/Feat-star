@@ -1,0 +1,112 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: justify;
+
+}
+
+
+body {
+    width: 100%;
+    margin: auto;
+
+}
+
+
+/* ----------------------------------------HEADER--------------------------------------- */
+
+
+
+
+.header {
+  
+    display: flex;
+    /* background-color: aqua; */
+    
+    justify-content: space-between;
+   
+}
+
+.logo {
+    margin-left: 10px;
+}
+
+
+
+/* --------------------------------Navbar---------------------- */
+.navbar {
+    width: 500px;
+    height: 20px;
+    display: flex;
+    align-self: flex-end;
+    
+}
+
+.nav_items {
+    width: 500px;
+    display: flex;
+    justify-content: space-between;
+    
+}
+
+.nav_items li {
+    
+    list-style: none;
+}
+
+.nav_items li a  {
+    text-decoration: none;
+}
+
+.connect_cart {
+    display:flex;
+    margin-right: 20px;
+    justify-content: space-between;
+    width: 200px;
+}
+
+.login {
+    display: flex;
+}
+
+:is(.login a, .cart a)  {
+    text-decoration: none;
+}
+
+.presentation {
+
+   
+    
+}
+
+
+.site_name {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: -90vh;
+    background-color: #f0f;
+    height: 515px;
+    gap: 2em;
+   
+   
+}
+
+
+.feat {
+    font-size: 3em;
+    padding-left: 5em;
+}
+
+.motocross {
+    padding-left: 30em;
+    font-size: 1em;
+}
+
+
+
+h1{
+    background-color: #f0f;
+}

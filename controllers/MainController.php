@@ -8,3 +8,4 @@ class MainController
         require_once __DIR__ . '/../views/footer.tpl.php';
     }
 }
+

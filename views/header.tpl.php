@@ -14,7 +14,7 @@
         <div class="logo">
             <a href='#'><img src="./assets/img/feat-logo-254x87-fluo.png" alt="logo du site"></a>
         </div>
-        <div class="navbar">
+        <nav class="navbar">
             <ul class="nav_items">
                 <li><a href="#">Gobelets</a></li>
                 <li><a href='#'>Balisage</a></li>
@@ -22,7 +22,7 @@
                 <li><a href='#'>Déstockage</a></li>
 
             </ul>
-        </div>
+        </nav>
         <div class="connect_cart">
             <div class="login">
                 <span>logo</span>

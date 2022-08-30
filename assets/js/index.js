@@ -1,0 +1,1 @@
+/* TODO faire apparraitre la désignation de la catégorie avec le bouton de lien au milieu de l'image de la gallery */

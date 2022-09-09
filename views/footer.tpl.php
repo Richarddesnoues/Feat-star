@@ -23,6 +23,9 @@
                         <li>Suivez-nous</li>
                     </ul>
                     <div class="social">
+                        <i class="fa-brands fa-facebook"></i>
+                        <i class="fa-brands fa-snapchat"></i>
+
 
                     </div>
 
@@ -32,12 +35,16 @@
             <div class="footer2">
                 <p>&copy 2022 Feat*</p>
                 <div class="wallet">
+                    <i class="fa-brands fa-cc-amex"></i>
+                    <i class="fa-brands fa-cc-visa"></i>
+                    <i class="fa-brands fa-paypal"></i>
                     
                 </div>
             </div>
 
 
         </footer>
+        <script src="assets/js/index.js"></script>
     </body>
 
 </html>

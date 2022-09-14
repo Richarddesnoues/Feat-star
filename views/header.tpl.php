@@ -28,17 +28,28 @@
         </div>
         <nav class="navbar">
             <ul class="nav_items">
-                <li><a href="./gobelet">Gobelets</a></li>
-                <li><a href='./balisage'>Balisage</a></li>
-                <li><a href='./materiel'>Matériel évenementiel</a></li>
-                <li><a href='./destockage'>Déstockage</a></li>
+                <li class ="navItem <?= $template === 'gobelet' ? 'active' : ''; ?>"> 
+                    <a href="./gobelet">Gobelets</a>      
+                </li>
+
+                <li class ="navItem <?= $template === 'balisage' ? 'active' : ''; ?>">
+                    <a href='./balisage'>Balisage</a>
+                </li>
+
+                <li class ="navItem <?= $template === 'materiel' ? 'active' : ''; ?>">
+                    <a href='./materiel'>Matériel évenementiel</a>
+                </li>
+
+                <li class ="navItem <?= $template === 'destockage' ? 'active' : ''; ?>">
+                    <a href='./destockage'>Déstockage</a>
+                </li>
 
             </ul>
         </nav>
         <div class="connect_cart">
             <div class="login">
                 <!-- <div class="user_login"> -->
-                    <i class="fa fa-user"></i>
+                <i class="fa fa-user"></i>
                 <!-- </div> -->
                 <a href='./user'>
                     <p>Connexion</p>

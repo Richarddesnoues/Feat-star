@@ -74,10 +74,11 @@ body {
 .nav_items li {
    
     list-style: none;
+    height: 40px;
 }
 
 .nav_items li:hover {
-    transform: scale(1.2);
+    transform: scale(1.1);
     transition: all .4s ease-in-out;
     
 
@@ -99,6 +100,15 @@ body {
     
     
     
+}
+
+
+
+.navItem.active {
+
+    color:#FF3030;
+    border-bottom: 2px solid #FF3030;
+    transform: scale(1.1);
 }
 
 

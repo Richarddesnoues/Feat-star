@@ -4,14 +4,16 @@ class MainController
     private function show($template, $viewVars = [])
     {
         require_once __DIR__ . '/../views/header.tpl.php';
-        require_once __DIR__ . '/../views/'.$template;
+        // je concatene le $template demandé avec la fin du nom du fichier pour éviter de le répéter à chaque fois(ex: 404.tpl.php, balisage.tpl.php....)
+        
+        require_once __DIR__ . '/../views/'.$template.'.tpl.php'; 
         require_once __DIR__ . '/../views/footer.tpl.php';
     }
 
 
     public function error404()
     {
-        $tplName = '404.tpl.php';
+        $tplName = '404';
         $this->show($tplName);
 
     }
@@ -19,40 +21,40 @@ class MainController
     
     public function balisage() 
     {
-        $tplName = 'balisage.tpl.php';
+        $tplName = 'balisage';
         $this->show($tplName);
     }
 
     public function cart()
     {
-        $tplName = 'cart.tpl.php';
+        $tplName = 'cart';
         $this->show($tplName);
     }
 
     public function cgv()
     {
-        $tplName = 'cgv.tpl.php';
+        $tplName = 'cgv';
         $this->show($tplName);
     }
 
 
     public function contact()
     {
-        $tplName = 'contact.tpl.php';
+        $tplName = 'contact';
         $this->show($tplName);
     }
 
 
     public function destockage()
     {
-        $tplName = 'destockage.tpl.php';
+        $tplName = 'destockage';
         $this->show($tplName);
     }
 
 
     public function gobelet()
     {
-        $tplName = 'gobelet.tpl.php';
+        $tplName = 'gobelet';
         $this->show($tplName);
 
     }
@@ -60,27 +62,27 @@ class MainController
 
     public function materiel()
     {
-        $tplName = 'materiel.tpl.php';
+        $tplName = 'materiel';
         $this->show($tplName);
     }
 
 
     public function products()
     {
-        $tplName = 'products.tpl.php';
+        $tplName = 'products';
         $this->show($tplName);
     }
 
 
     public function user()
     {
-        $tplName = 'user.tpl.php';
+        $tplName = 'user';
         $this->show($tplName);
     }
 
     public function home()
     {
-        $tplName = 'home.tpl.php';
+        $tplName = 'home';
         $this->show($tplName);
     }
 

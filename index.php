@@ -33,44 +33,44 @@ $routes = [
         'controller' => 'MainController',
         'method' => 'error404',
     ],
-    'balisage' => [
+    '/balisage' => [
         'controller' => 'MainController',
         'method' => 'balisage',
         
     ],
-    'cart' =>[
+    '/cart' =>[
         'controller' => 'MainController',
         'method' => 'cart',
     ],
-    'cgv'=>[
+    '/cgv'=>[
         'controller' => 'MainController',
         'method' => 'cgv',
     ],
-    'contact' =>[
+    '/contact' =>[
         'controller' => 'MainController',
         'method' => 'contact',
     ],
-    'destockage'=>[
+    '/destockage'=>[
         'controller' => 'MainController',
         'method' => 'destockage',
     ],
-    'gobelet'=>[
+    '/gobelet'=>[
         'controller' => 'MainController',
         'method' => 'gobelet',
     ],
-    'home'=>[
+    '/'=>[
         'controller' => 'MainController',
         'method' => 'home',
     ],
-    'materiel'=>[
+    '/materiel'=>[
         'controller' => 'MainController',
         'method' => 'materiel',
     ],
-    'product'=>[
+    '/product'=>[
         'controller' => 'MainController',
         'method' => 'products',
     ],
-    'user' =>[
+    '/user' =>[
         'controller' => 'MainController',
         'method' => 'user',
     ],
@@ -80,7 +80,7 @@ $routes = [
 
 // On imagine par defaut que la page demandée est l'index
 
-$requestedPage = 'home';
+$requestedPage = '/';
 
 // Complément impératif pour utilisr les routes déclarées qui permet:
 

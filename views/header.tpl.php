@@ -24,14 +24,14 @@
 <body>
     <div class="header">
         <div class="logo">
-            <a href='#'><img src="./assets/img/feat-logo-254x87-fluo.png" alt="logo du site"></a>
+            <a href='./'><img src="./assets/img/feat-logo-254x87-fluo.png" alt="logo du site"></a>
         </div>
         <nav class="navbar">
             <ul class="nav_items">
-                <li><a href="#">Gobelets</a></li>
-                <li><a href='#'>Balisage</a></li>
-                <li><a href='#'>Matériel évenementiel</a></li>
-                <li><a href='#'>Déstockage</a></li>
+                <li><a href="./gobelet">Gobelets</a></li>
+                <li><a href='./balisage'>Balisage</a></li>
+                <li><a href='./materiel'>Matériel évenementiel</a></li>
+                <li><a href='./destockage'>Déstockage</a></li>
 
             </ul>
         </nav>
@@ -40,14 +40,14 @@
                 <!-- <div class="user_login"> -->
                     <i class="fa fa-user"></i>
                 <!-- </div> -->
-                <a href='#'>
+                <a href='./user'>
                     <p>Connexion</p>
                 </a>
             </div>
 
             <div class="cart">
                 <i class="fa-solid fa-cart-shopping"></i>
-                <a href='#'>
+                <a href='./cart'>
                     <p>Mon panier</p>
                 </a>
             </div>

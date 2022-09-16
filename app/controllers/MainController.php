@@ -13,7 +13,7 @@ class MainController
 
     public function error404()
     {
-        $tplName = '404';
+        $tplName = '404'; //j'ai laissé cette variable "intermédiaire" volontairement.
         $this->show($tplName);
 
     }

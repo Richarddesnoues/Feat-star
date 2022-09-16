@@ -1,5 +1,5 @@
 <?php
-require_once __DIR__.'/controllers/MainController.php'; 
+require_once __DIR__.'/../app/controllers/MainController.php'; 
 
 
 

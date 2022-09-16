@@ -1,0 +1,2 @@
+Deny from All 
+# empêche l'accès au dossier "app" dans l'URL 

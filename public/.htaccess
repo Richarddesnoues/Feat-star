@@ -25,4 +25,4 @@ RewriteRule ^(.*)$ index.php?page=/$1 [QSA,L]
 
 
 # exemple :
-# lacolhost/mon/site/products => localhost/mon/site/products
+# locolhost/mon/site/products => localhost/mon/site/index.php?page=products

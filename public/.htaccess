@@ -2,26 +2,26 @@
 RewriteEngine On
 
 
-# Récupérer la fin de l'URL et le stocker dans la variable spéciale $1 pour l'utiliser plus tard.
-
-RewriteCond %{REQUEST_URI}::$1 ^(/.+)/(.*)::$2
-RewriteRule ^(.*) - [E="BASE_URI/%1"]
-
-
-
-
-# Mais activer la réécriture d'URL, seulement si l'URL demandée n'est pas un dossier qui existe.
+# On peut définir dans le htaccess des variables disponibles
+# DANS la superglobale $_SERVER
+# Ici on crée une variable BASE_URI qui contient la racine du site web
+# le code ci-dessus ne fonctionne plus
+#  j'ai résolu ce problème en utilisant PHP_SELF
+# RewriteCond %{REQUEST_URI}::$1 ^(/.+)/(.*)::\2$
+# RewriteRule ^(.*) - [E=BASE_URI:%1]
 RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME} !-f
 
-
-# Mais activer la réécriture d'URL, seulement si l'URL demandée n'est pas un fichier qui existe.
-RewriteCond %{REQUEST_FILENAME} !-f 
-
+ # RewriteRule . index.php [L]
 
 
 
 # Réécrire L'URL pour renseigner le script PHP, en remplaçant la fin par index.php?page=/partie-d-url-tapé-par-l-internaute
-RewriteRule ^(.*)$ index.php?page=/$1 [QSA,L]
+
+
+
+
+ RewriteRule ^(.*)$ index.php?page=/ [QSA,L]
 
 
 # exemple :

@@ -1,0 +1,6 @@
+{
+    "require": {
+        "altorouter/altorouter": "*",
+        "kint-php/kint": "^4.2"
+    }
+}

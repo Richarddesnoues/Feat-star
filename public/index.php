@@ -16,9 +16,14 @@ require_once __DIR__.'/../app/controllers/MainController.php';
 
 $router = new Router(); // Initialisation
 
-$router->declarationderoute('GET', '/', ['controller'=>'MainController', 'method'=> 'home']); // Déclaration
-$router->declarationderoute('GET', '/cart', ['controller'=>'CartController', 'method'=> 'cart']); // Déclaration
+// $router->declarationderoute('GET', '/', ['controller'=>'MainController', 'method'=> 'home']); // Déclaration
+// $router->declarationderoute('GET', '/cart', ['controller'=>'MainController', 'method'=> 'cart']); // Déclaration
 
-$router->verificationdelurl();// Vérification
+// l'utilisation d'une chaine de caractere plutot qu'un tableau associatif est plus rapide à écrire
 
-$router->executiondelaroute(); // Exécution
+$router->map('GET', '/', 'MainController#home'); // Déclaration de route
+$router->map('GET', '/cart', 'CartController#cart'); // Déclaration de route
+
+$router->match();// Vérification d'URL
+
+$router->routeExe(); // Exécution de la route

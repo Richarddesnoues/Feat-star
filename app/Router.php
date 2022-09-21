@@ -17,7 +17,7 @@ class Router
     }
 
     // 2# Déclaration
-    public function declarationderoute($method, $path, $endpoint)
+    public function map($method, $path, $endpoint)
     {
         // $router->map('GET', '/', ['controller' => 'MainController', 'method' => 'home']);
         // $router->map('GET', '/cart', ['controller' => 'CartController', 'method' => 'cart']);
@@ -25,7 +25,7 @@ class Router
     }
 
     // 3# Vérification
-    public function verificationdelurl()
+    public function match()
     {
 
         $this->match = $this->router->match();
@@ -44,11 +44,17 @@ class Router
     // Juste parce que c'est pratique, on va extraire le nom du controleur et j'appelle le nom de la méthode de l'action
 
     // 4# Exécution
-    public function executiondelaroute()
+    public function routeExe()
     {
 
-        $controllerName = $this->match['target']['controller'];
-        $methodName = $this->match['target']['method'];
+        // $controllerName = $this->match['target']['controller'];
+        // $methodName = $this->match['target']['method'];
+
+// l'utilisation de explode permet de scinder une chaine de caractere, ici on veut ce qu'il y a aavant et après le '#'.
+        $parts = explode('#', $this->match['target']);
+
+        $controllerName = $parts[0];
+        $methodName = $parts[1];
 
 
         $controller = new $controllerName();

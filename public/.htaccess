@@ -2,15 +2,15 @@
 RewriteEngine On
 
 
-# On peut définir dans le htaccess des variables disponibles
-# DANS la superglobale $_SERVER
-# Ici on crée une variable BASE_URI qui contient la racine du site web
-# le code ci-dessus ne fonctionne plus
-#  j'ai résolu ce problème en utilisant PHP_SELF
-# RewriteCond %{REQUEST_URI}::$1 ^(/.+)/(.*)::\2$
-# RewriteRule ^(.*) - [E=BASE_URI:%1]
-RewriteCond %{REQUEST_FILENAME} !-d
-RewriteCond %{REQUEST_FILENAME} !-f
+ #On peut définir dans le htaccess des variables disponibles
+ #DANS la superglobale $_SERVER
+ #Ici on crée une variable BASE_URI qui contient la racine du site web
+ #le code ci-dessus ne fonctionne plus
+  #j'ai résolu ce problème en utilisant PHP_SELF
+ RewriteCond %{REQUEST_URI}::$1 ^(/.+)/(.*)::\2$
+ RewriteRule ^(.*) - [E=BASE_URI:%1]
+ RewriteCond %{REQUEST_FILENAME} !-d
+ RewriteCond %{REQUEST_FILENAME} !-f
 
  # RewriteRule . index.php [L]
 

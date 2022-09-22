@@ -1,21 +1,28 @@
+
+<?php global $router;?>
 <!DOCTYPE html>
 <html lang="fr">
-
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../assets/css/index.css">
-    <link rel="stylesheet" href="../assets/icons/fontawesome/css/all.min.css">
-    <link rel="stylesheet" href="../assets/css/404.css">
-    <link rel="stylesheet" href="../assets/css/gobelet.css">
-    <link rel="stylesheet" href="../assets/css/balisages.css">
-    <link rel="stylesheet" href="../assets/css/materiel.css">
-    <link rel="stylesheet" href="../assets/css/destockage.css">
-    <link rel="stylesheet" href="../assets/css/contact.css">
-    <link rel="stylesheet" href="../assets/css/user.css">
-    <link rel="stylesheet" href="../assets/css/cart.css">
-    <link rel="stylesheet" href="../assets/css/cgv.css">
+
+    <!-- TO FIX chemin CSS -->
+    <link rel="stylesheet" href="<?= $router->url('assets/css/index.css'); ?>">
+    <link rel="stylesheet" href="<?= $router->url('assets/icons/fontawesome/css/all.min.css'); ?>">
+    <link rel="stylesheet" href="<?= $router->url('assets/css/404.css'); ?>">
+    <link rel="stylesheet" href="<?= $router->url('assets/css/gobelet.css'); ?>">
+    <link rel="stylesheet" href="<?= $router->url('assets/css/balisages.css'); ?>">
+    <link rel="stylesheet" href="<?= $router->url ('assets/css/materiel.css">');?>">
+    <link rel="stylesheet" href="<?= $router->url('assets/css/destockage.css'); ?>">
+    <link rel="stylesheet" href="<?= $router->url('assets/css/contact.css'); ?>">
+    <link rel="stylesheet" href="<?= $router->url('assets/css/user.css') ;?>">
+    <link rel="stylesheet" href="<?= $router->url('assets/css/cart.css'); ?>">
+    <link rel="stylesheet" href="<?= $router->url('assets/css/cgv.css'); ?>">
+
+    
+
+    
 
 
     <title>Feat*</title>
@@ -24,7 +31,7 @@
 <body>
     <div class="header">
         <div class="logo">
-            <a href='./'><img src="../assets/img/feat-logo-254x87-fluo.png" alt="logo du site"></a>
+            <a href='./'><img src="../public/assets/img/feat-logo-254x87-fluo.png" alt="logo du site"></a>
         </div>
         <nav class="navbar">
             <ul class="nav_items">
@@ -58,7 +65,7 @@
 
             <div class="cart">
                 <i class="fa-solid fa-cart-shopping"></i>
-                <a href='./cart'>
+                <a href='./panier'>
                     <p>Mon panier</p>
                 </a>
             </div>

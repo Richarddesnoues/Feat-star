@@ -54,6 +54,10 @@ class Router
     // 4# Exécution
     public function routeExe()
     {
+        // si une correspondance n'est pas trouvée on envoie une page 404
+        if ($this->match == null) {
+            die('Page not found');
+        }
 
         // $controllerName = $this->match['target']['controller'];
         // $methodName = $this->match['target']['method'];

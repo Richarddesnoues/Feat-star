@@ -4,7 +4,7 @@ class CatalogController {
 
     private function show($template, $viewVars = [])
     {
-        global $baseUrl;
+        
         include __DIR__ . '/../views/header.tpl.php';
         include __DIR__ . '/../views/' . $template .'.tpl.php';
         include __DIR__ . '/../views/footer.tpl.php';
@@ -12,10 +12,20 @@ class CatalogController {
 
 
     public function category($params) {
+        $category = Category::find($params['id']);
+        var_dump($category);
         require_once __DIR__.'/../views/category.tpl.php';
 
     }
 
+    public function product($params)
+    {
+        $product = Product::find($params['id']);
+        var_dump($product);
+        // $tplName = 'product';
+        // $this->show($tplName);
+   require_once __DIR__.'/../views/product.tpl.php'; 
+    }
 
 
 
@@ -48,16 +58,13 @@ class CatalogController {
 
     public function materiel($params)
     {
+        // Avant d'afficher le bon template il faut récupérer les données du produit demandé dans la BDD.
+        //$product = Product::find($params['id']);
          $tplName = 'materiel';
          $this->show($tplName);
     // require_once __DIR__.'/../views/materiel.tpl.php';
     }
 
 
-    public function products($params)
-    {
-        $tplName = 'products';
-        $this->show($tplName);
-//    require_once __DIR__.'/../views/products.tpl.php'; 
-    }
+    
   }

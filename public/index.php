@@ -1,10 +1,12 @@
 <?php
 require_once __DIR__.'/../vendor/autoload.php';
 
-include 'kint.phar';
+//include 'kint.phar';
 
+require_once __DIR__ .'/../app/models/Category.php';
+require_once __DIR__ .'/../app/models/Product.php';
 require_once __DIR__.'/../app/Router.php';
-
+require_once __DIR__.'/../app/Database.php';
 
 require_once __DIR__.'/../app/controllers/MainController.php'; 
  require_once __DIR__.'/../app/controllers/CartController.php';
@@ -24,7 +26,7 @@ $router = new Router(); // Initialisation
 $router->map('GET', '/', 'MainController#home'); // Déclaration de route
 $router->map('GET', '/panier', 'CartController#cart'); // Déclaration de route
 $router->map('GET', '/catalogue/categorie/[i:id]', 'CatalogController#category');
-$router->map('GET', '/catalogue/produit/[i:id]', 'CatalogController#materiel');
+$router->map('GET', '/catalogue/produit/[i:id]', 'CatalogController#product');
 //$router->map('GET', '/catalogue/categorie/[i:id]', 'CatalogController#balisage');
 
 $router->match();// Vérification d'URL

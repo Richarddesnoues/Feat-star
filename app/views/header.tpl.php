@@ -19,6 +19,7 @@
     <link rel="stylesheet" href="<?= $router->url('assets/css/user.css') ;?>">
     <link rel="stylesheet" href="<?= $router->url('assets/css/cart.css'); ?>">
     <link rel="stylesheet" href="<?= $router->url('assets/css/cgv.css'); ?>">
+    <link rel="stylesheet" href="<?= $router->url('assets/css/cgv.css'); ?>">
 
     
 
@@ -31,7 +32,7 @@
 <body>
     <div class="header">
         <div class="logo">
-            <a href='./'><img src="../public/assets/img/feat-logo-254x87-fluo.png" alt="logo du site"></a>
+            <a href='./'><img src="<?= $router->url('assets/img/feat-logo-254x87-fluo.png');?>" alt="logo du site"></a>
         </div>
         <nav class="navbar">
             <ul class="nav_items">

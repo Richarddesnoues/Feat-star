@@ -36,7 +36,7 @@ class Router
     {
 
         $this->match = $this->router->match();
-        var_dump($this->match);
+        //var_dump($this->match);
         
     }
 
@@ -56,7 +56,7 @@ class Router
     {
         // si une correspondance n'est pas trouvée on envoie une page 404
         if ($this->match == null) {
-            die('Page not found');
+            die('Page not found error 404');
         }
 
         // $controllerName = $this->match['target']['controller'];

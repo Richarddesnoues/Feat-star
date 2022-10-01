@@ -1,0 +1,70 @@
+<?php
+
+
+
+
+class Type 
+{
+    private $id;
+    private $name;
+
+
+
+
+    static public function find($id) {
+        $sql = "
+        SELECT *
+        FROM type
+        WHERE id = $id;
+        ";
+    
+        $pdo = Database::getPDO();
+        $pdoStatement = $pdo->query($sql);
+    //var_dump($pdo);
+        return $pdoStatement->fetchObject('Type');
+    }
+
+/***************************************GETTERS et SETTERS***************************************** */
+
+
+
+    /**
+     * Get the value of id
+     */ 
+    public function getId()
+    {
+        return $this->id;
+    }
+
+    /**
+     * Set the value of id
+     *
+     * @return  self
+     */ 
+    public function setId($id)
+    {
+        $this->id = $id;
+
+        return $this;
+    }
+
+    /**
+     * Get the value of name
+     */ 
+    public function getName()
+    {
+        return $this->name;
+    }
+
+    /**
+     * Set the value of name
+     *
+     * @return  self
+     */ 
+    public function setName($name)
+    {
+        $this->name = $name;
+
+        return $this;
+    }
+}

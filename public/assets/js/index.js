@@ -41,18 +41,18 @@ function openMenu() {
 openMenu();
 
 
-function closeMenu() {
-    let nav_menu = document.querySelector('.nav_items');
-    let burger = document.querySelector('.hamburger_bloc');
+// function closeMenu() {
+//     let navbar = document.querySelector('.navbar');
+//     let burger = document.querySelector('.hamburger_bloc');
 
-    burger.addEventListener('click', () => {
-        nav_menu.classList.toggle('open_nav');
+//     burger.addEventListener('click', () => {
+//         navbar.classList.toggle('open_nav');
        
 
-    })
+//     })
 
-}
-closeMenu();
+// }
+// closeMenu();
 
 
 

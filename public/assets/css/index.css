@@ -75,6 +75,7 @@ body {
    
     list-style: none;
     height: 40px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 .nav_items li:hover {
@@ -123,6 +124,7 @@ body {
 
 .connect_cart p {
     color:black;
+   /* font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;*/
 }
 
 .cart {
@@ -581,6 +583,7 @@ body {
     
     .nav_items {
         display: none;
+        position:relative;
     }
 
     .nav_items li a   {
@@ -602,10 +605,11 @@ body {
         display: flex;
         flex-direction: column;
         width: 100%;
-        background-color: #FF3030;
+       /* background-color: #FF3030;*/
         transform: translateX(-135%);
         transition: 0.4s transform ease-in-out;
         position: absolute;
+        top:0;
         
     }
 
@@ -626,7 +630,7 @@ body {
 
 
     .navbar .open_nav {
-        transform: translateY(100%);
+        /*transform: translateY(-100%);*/
     }
 
 

@@ -1,0 +1,110 @@
+.product {
+    width: 70%;
+    margin: auto;
+    min-height: 700px;
+}
+
+
+/********************************FIL D'ARIANE*****************************************/
+
+.breadcrum {
+    display: flex;
+    border-bottom: solid 1px #FF3030;
+    padding-bottom: 26px;
+    /* font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; */
+}
+
+
+
+.breadcrum li {
+    list-style: none;
+    padding-right: 5px;
+    padding-left: 5px;
+    
+}
+
+
+
+/***************************************FICHE PRODUIT**************************************/
+.display {
+    margin-top: 70px;
+    display: flex;
+    height: 500px;
+    
+    border-bottom: solid 1px #FF3030;
+    
+}
+
+
+
+/*********************************************AFFICHAGE DE GAUCHE*******************************/
+
+.leftDisplay {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50%;
+    /* background-color: #f0f; */
+    
+}
+
+/* .img_item {
+    object-fit: cover;
+    position: absolute;
+    height: 100%;
+} */
+
+
+
+/* .img_items {
+   background-color: blueviolet;
+   
+   
+} */
+
+
+
+/********************************************AFFICHAGE DE DROITE***********************************/
+
+
+.rightDisplay {
+    width:50%;
+    /* background-color: aqua; */
+}
+
+.productItem {
+    margin-bottom: 26px;
+}
+
+
+h1 {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    /* color: blue; */
+}
+
+
+.price span {
+    font-size: 1.5em;
+    font-weight: 700;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.button {
+    font-weight: 400;
+    margin-top: 14px;
+    padding: 6px 12px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+
+
+
+
+
+
+.describe p {
+    margin-top: 36px;
+    text-align: start;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}

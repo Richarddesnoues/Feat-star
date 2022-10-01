@@ -1,7 +1,9 @@
 <?php
 
 class CatalogController {
-
+    // Gère les requetes get /category
+    // Déclenche l'affichage d'un template spécifique
+    
     private function show($template, $viewVars = [])
     {
         
@@ -10,21 +12,34 @@ class CatalogController {
         include __DIR__ . '/../views/footer.tpl.php';
     }
 
-
     public function category($params) {
+        // je récupère tous les produits qui correspondent à cette catégorie
         $category = Category::find($params['id']);
-        var_dump($category);
-        require_once __DIR__.'/../views/category.tpl.php';
+        $product = $category->products();
+        
+        //var_dump($category);
+        //require_once __DIR__.'/../views/category.tpl.php';
+        $this->show('category', ['product' => $product,  'category' => $category]);
 
     }
 
     public function product($params)
     {
         $product = Product::find($params['id']);
-        var_dump($product);
+        //var_dump($product);
+
+        // Je récupere toutes les categories des produits
+        $category = Category::find($product->getCategory_id());
+
+
+        // Je récupère tous les types des produits
+
+        $type = Type::find($product->getType_id());
+
         // $tplName = 'product';
         // $this->show($tplName);
-   require_once __DIR__.'/../views/product.tpl.php'; 
+        $this->show('product', ['product' => $product, 'type' => $type, 'category' => $category]);
+   //require_once __DIR__.'/../views/product.tpl.php'; 
     }
 
 
@@ -61,7 +76,7 @@ class CatalogController {
         // Avant d'afficher le bon template il faut récupérer les données du produit demandé dans la BDD.
         //$product = Product::find($params['id']);
          $tplName = 'materiel';
-         $this->show($tplName);
+         $this->show($tplName, [$tplName => $tplName]);
     // require_once __DIR__.'/../views/materiel.tpl.php';
     }
 

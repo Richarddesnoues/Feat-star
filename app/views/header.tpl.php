@@ -7,7 +7,6 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <!-- TO FIX chemin CSS -->
     <link rel="stylesheet" href="<?= $router->url('assets/css/index.css'); ?>">
     <link rel="stylesheet" href="<?= $router->url('assets/icons/fontawesome/css/all.min.css'); ?>">
     <link rel="stylesheet" href="<?= $router->url('assets/css/404.css'); ?>">
@@ -20,6 +19,7 @@
     <link rel="stylesheet" href="<?= $router->url('assets/css/cart.css'); ?>">
     <link rel="stylesheet" href="<?= $router->url('assets/css/cgv.css'); ?>">
     <link rel="stylesheet" href="<?= $router->url('assets/css/cgv.css'); ?>">
+    <link rel="stylesheet" href="<?= $router->url('assets/css/product.css'); ?>">
 
     
 

@@ -3,10 +3,14 @@
 
      <div class="breadcrum">
          <li>Accueil</li> /
-         <li>Catalogue</li> /
-         <li><?= $viewVars['category']->getName(); ?></li> /
-         <li><?= $viewVars['product']->getName(); ?></li>
+         <li>
+            <a href= "<?= $viewVars['category']->getName(); ?>"> <?= $viewVars['category']->getName(); ?></a>
+        </li> /
+         <li>
+            <a href= "<?= $viewVars['product']->getName(); ?>"><?= $viewVars['product']->getName(); ?></a>
+        </li>
      </div>
+
      <div class="display">
          <div class="leftDisplay">
              <div class="img_items">

@@ -9,15 +9,11 @@
 
     <link rel="stylesheet" href="<?= $router->url('assets/css/index.css'); ?>">
     <link rel="stylesheet" href="<?= $router->url('assets/icons/fontawesome/css/all.min.css'); ?>">
+
     <link rel="stylesheet" href="<?= $router->url('assets/css/404.css'); ?>">
-    <link rel="stylesheet" href="<?= $router->url('assets/css/gobelet.css'); ?>">
-    <link rel="stylesheet" href="<?= $router->url('assets/css/balisages.css'); ?>">
-    <link rel="stylesheet" href="<?= $router->url ('assets/css/materiel.css">');?>">
-    <link rel="stylesheet" href="<?= $router->url('assets/css/destockage.css'); ?>">
     <link rel="stylesheet" href="<?= $router->url('assets/css/contact.css'); ?>">
     <link rel="stylesheet" href="<?= $router->url('assets/css/user.css') ;?>">
     <link rel="stylesheet" href="<?= $router->url('assets/css/cart.css'); ?>">
-    <link rel="stylesheet" href="<?= $router->url('assets/css/cgv.css'); ?>">
     <link rel="stylesheet" href="<?= $router->url('assets/css/cgv.css'); ?>">
     <link rel="stylesheet" href="<?= $router->url('assets/css/product.css'); ?>">
 
@@ -36,6 +32,10 @@
         </div>
         <nav class="navbar">
             <ul class="nav_items">
+                <li class="volet_connection">
+                
+                    <a href='#'>Se connecter</a>
+                </li>
                 <li class ="navItem <?= $template === 'gobelet' ? 'active' : ''; ?>"> 
                     <a href="./gobelet">Gobelets</a>      
                 </li>
@@ -52,6 +52,7 @@
                     <a href='./destockage'>Déstockage</a>
                 </li>
 
+
             </ul>
         </nav>
         <div class="connect_cart">
@@ -65,9 +66,9 @@
             </div>
 
             <div class="cart">
-                <i class="fa-solid fa-cart-shopping"></i>
                 <a href='./panier'>
-                    <p>Mon panier</p>
+                    <i class="fa-solid fa-cart-shopping"></i><span>0</span>
+                    <!-- <p>Mon panier</p> -->
                 </a>
             </div>
 

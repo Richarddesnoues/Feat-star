@@ -7,6 +7,6 @@
     </div>
     <?php //var_dump($viewVars['category']->getName()) ?>
     <div>
-    <img src="<?= $router->url($viewVars['category']->getPicture()); ?>" alt="image de la catégorie" >
+        <img src="<?= $router->url($viewVars['category']->getPicture()); ?>" alt="image de la catégorie" >
     </div>
 </section>

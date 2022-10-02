@@ -10,9 +10,9 @@ require_once __DIR__.'/../app/Router.php';
 require_once __DIR__.'/../app/Database.php';
 
 require_once __DIR__.'/../app/controllers/MainController.php'; 
- require_once __DIR__.'/../app/controllers/CartController.php';
- require_once __DIR__.'/../app/controllers/CatalogController.php';
-// require_once __DIR__.'/../app/controllers/UserController.php';
+require_once __DIR__.'/../app/controllers/CartController.php';
+require_once __DIR__.'/../app/controllers/CatalogController.php';
+require_once __DIR__.'/../app/controllers/UserController.php';
 
 
 
@@ -28,7 +28,8 @@ $router->map('GET', '/', 'MainController#home'); // Déclaration de route
 $router->map('GET', '/panier', 'CartController#cart'); // Déclaration de route
 $router->map('GET', '/catalogue/categorie/[i:id]', 'CatalogController#category');
 $router->map('GET', '/catalogue/produit/[i:id]', 'CatalogController#product');
-//$router->map('GET', '/catalogue/categorie/[i:id]', 'CatalogController#balisage');
+$router->map('GET', '/account/login', 'UserController#logUser');
+$router->map('GET', '/account/register', 'UserController#registerUser' );
 
 $router->match();// Vérification d'URL
 

@@ -15,11 +15,11 @@ class CatalogController {
     public function category($params) {
         // je récupère tous les produits qui correspondent à cette catégorie
         $category = Category::find($params['id']);
-        $product = $category->products();
+        $products = $category->products();
         
         //var_dump($category);
         //require_once __DIR__.'/../views/category.tpl.php';
-        $this->show('category', ['product' => $product,  'category' => $category]);
+        $this->show('category', ['products' => $products,  'category' => $category]);
 
     }
 
@@ -28,7 +28,8 @@ class CatalogController {
         $product = Product::find($params['id']);
         //var_dump($product);
 
-        // Je récupere toutes les categories des produits
+
+        // On récupère la categorie pour compléter le breadcrumb
         $category = Category::find($product->getCategory_id());
 
 

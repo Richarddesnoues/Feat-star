@@ -44,7 +44,7 @@
 
 
         </footer>
-        <script src="assets/js/index.js"></script>
+        <script src="<?= $router->url('assets/js/index.js')?>"></script>
     </body>
 
 </html>

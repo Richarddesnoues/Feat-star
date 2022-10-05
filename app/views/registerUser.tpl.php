@@ -1,13 +1,13 @@
 <?php global $router ;?>
 
-
 <div class="user_bloc">
-<section class="user">
-    
 
+
+
+<section class="user">
 
     <div class="loginUser">
-        <h1>Identifiez vous</h1>
+        <h1>Nouveau client</h1>
     </div>
 
     <form class="form" action ="" method="post">
@@ -21,20 +21,22 @@
                     <a href="#"><p>Mot de passe oublié ?</p></a>
                 </div>
             </div>
-            <input type="submit" value="Se connecter">
+            <button class="addUser"><a href="#">Créer un compte</a></button>
+            
         
         </div>
     </form>
 
     <div class="newUser">
-        <p>Nouveau client ?</p>
-        <button class="addUser"><a href="#">Créer un compte</a></button>
+        <p>Déjà client ?</p>
+        <input type="submit" value="Se connecter">
+        
     </div>
 
 
 
    
-    
+
 
 
 </section>

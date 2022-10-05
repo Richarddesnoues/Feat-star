@@ -37,7 +37,7 @@
                     <a href='#'>Se connecter</a>
                 </li>
                 <li class ="navItem <?= $template === 'gobelet' ? 'active' : ''; ?>"> 
-                    <a href="./gobelet">Gobelets</a>      
+                    <a href="">Gobelets</a>      
                 </li>
 
                 <li class ="navItem <?= $template === 'balisage' ? 'active' : ''; ?>">

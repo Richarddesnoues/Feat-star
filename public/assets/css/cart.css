@@ -1,8 +1,327 @@
+.body_panier {
+    background-color: #F2F2F2;
+}
+
+
 .panier {
-    min-height: 500px;
+    width:80%;
+    min-height: 700px;
+    /*background-color: #f0f;*/
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
 }
 
 .panier h1 {
     font-size: 1.5em;
+   
+}
+
+/************************************************BLOC DE GAUCHE**************************************/
+
+
+.title {
+    display: flex;
+    justify-content: space-between;
+    padding-top: 70px;
+}
+
+
+
+.basket_title {
+    width:70%;
+    padding-bottom: 16px;
+    height: fit-content;
+}
+
+
+
+.img_produit {
+    width:200px;
+    height:200px;
+    /* background-color: brown; */
+    display: flex;
+    align-items: center;  
+    
+}
+
+.little_img {
+    width: 100px;
+    height:100px;
+    background-image: url(../../assets/img/products/brouetteRouge.png);
+    background-size: cover;
+    background-position: center;
+    margin: auto;
+
+}
+
+
+
+
+.name_produit {
+    width:200px;
+}
+
+.main_bloc_produit {
+   
+    display: flex;
+    justify-content: space-between;
+    height:600px;
+    
+
+}
+
+
+
+.bloc_produit {
+    display: flex;
+    /* background-color: #f0f; */
+    background-color: white;
+    height: 400px;
+    width: 100%;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.basket_bloc_produit {
+    width:70%;
+    padding-top: 50px;
+}
+
+
+.bloc_produit_basket {
+    display:flex;
+    height:600px;
+    width:100%;
+    /* background-color: aqua; */
+    margin-top: 30px;
+    justify-content: space-between;
+}
+
+.price_produit {
+    height: 200px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-top: 85px;
+}
+
+
+.product_quantity {
+
+    margin-top: 16px;
+
+}
+
+
+.supprime {
+
+    margin-top: 30px;
+}
+
+
+
+
+
+/****************************************BLOC DE DROITE**************************************/
+
+.recap_title {
+    
+    background-color: #F2F2F2;
+    padding-bottom:16px;
+}
+
+
+
+.recap_basket {
+    width: 25%;
+    height: 400px;
+    padding-top: 50px;
+}
+
+.basket {
+    display: flex;
+    flex-direction: column;justify-content: center;
+
+    
+    /* background-color: blueviolet; */
+    font-size: .8em;
+    background-color: white;
+}
+
+
+
+
+.basket_price {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    height: 400px;
+}
+
+
+
+.panier_price {
+    display: flex;
+    justify-content: space-around;
+    padding-top: 70px;
+    padding-bottom: 40px;
+    /* background-color: #f0f; */
+    border-bottom: 1px solid #FF3030;
+    width: 90%;
+    margin: auto;
+}
+
+.total_span {
+    display: flex;
+    justify-content: space-around;
+    /* background-color:blue; */
+    padding-top: 20px;
+    padding-bottom: 20px;
+    width: 90%;
+    margin: auto;
+}
+
+.nb_panier {
+    width:115.24px;
+}
+
+
+
+.total {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 300px;
+
+}
+
+.tva {
+    display: flex;
+}
+
+.tva span {
+    color: grey;
+}
+
+.form_panier {
     text-align: center;
+    margin-bottom: 30px;
+}
+
+
+
+.btn_form_panier {
+    width: 200px;
+    padding: 8px 12px;
+    text-align: center;
+    border-radius: 5px;
+    border: none;
+    background-color: #FFCA18;
+    cursor: pointer;
+   
+    
+}
+
+
+
+
+/*************************************MEDIA QUERY*******************************************/
+
+
+@media all and (max-width:1100px)
+
+{
+    .panier
+    {
+       height:1000px;
+    }
+    
+
+} 
+
+
+@media all and (min-width:375px) and (max-width:1100px)
+
+{
+
+    .body_panier {
+        height:1300px;
+    }
+
+
+    .basket_bloc_produit {
+        width: 100%;
+    }
+
+
+
+    .main_bloc_produit {
+        height:0px;
+    }
+
+
+
+    .bloc_produit_basket {
+        display: flex;
+        flex-direction:column;
+        justify-content: center;
+        background-color: #FF3030;
+        padding-top: 0;
+        margin-top: 0px;
+        height: 1300px;
+
+    }
+
+
+    .panier {
+        width: 100%;
+        height: 1300px;
+    }
+
+    
+    .recap_title  {
+        display: none;
+        padding-bottom: 0px;
+    }
+
+
+    .recap_basket {
+        width:100%;
+       padding-top: 0px;
+       margin: auto;
+    }
+
+
+    .basket {
+        display:flex;
+    }
+
+    .panier_price {
+
+        padding-top: 0px;
+        padding-bottom: 28px;
+
+    }
+
+    .total {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        height: 200px;
+        margin-bottom: 100px;
+    
+    }
+
+    .total span {
+        margin-top: 0px;
+    }
+
+    .btn_form_panier {
+        width: 90%;
+        padding-top: 16px ;
+        padding-bottom: 16px;
+       
+       
+    }
 }

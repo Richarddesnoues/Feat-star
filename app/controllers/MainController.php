@@ -1,14 +1,8 @@
 <?php
-class MainController
+class MainController extends CoreController
 {
 
-    private function show($template, $viewVars = [])
-    {
-        
-        include __DIR__ . '/../views/header.tpl.php';
-        include __DIR__ . '/../views/' . $template .'.tpl.php';
-        include __DIR__ . '/../views/footer.tpl.php';
-    }
+    
 
     public function home()
     {

@@ -1,14 +1,8 @@
 <?php
 
-class CartController {
+class CartController extends CoreController{
 
-    private function show($template, $viewVars = [])
-    {
-        global $baseUrl;
-        include __DIR__ . '/../views/header.tpl.php';
-        include __DIR__ . '/../views/' . $template .'.tpl.php';
-        include __DIR__ . '/../views/footer.tpl.php';
-    }
+   
     public function cart()
     {
         $tplName = 'cart';

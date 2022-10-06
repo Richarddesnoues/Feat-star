@@ -9,6 +9,9 @@ require_once __DIR__ .'/../app/models/Type.php';
 require_once __DIR__.'/../app/Router.php';
 require_once __DIR__.'/../app/Database.php';
 
+// On importe les controller requis.
+// Le CoreController doit être le premier à etre appellé pour savoir qui est le parent
+require_once __DIR__.'/../app/controllers/CoreController.php';
 require_once __DIR__.'/../app/controllers/MainController.php'; 
 require_once __DIR__.'/../app/controllers/CartController.php';
 require_once __DIR__.'/../app/controllers/CatalogController.php';

@@ -1,13 +1,7 @@
 <?php
 
-class UserController {
-    private function show($template, $viewVars = [])
-    {
-        
-        include __DIR__ . '/../views/header.tpl.php';
-        include __DIR__ . '/../views/' . $template .'.tpl.php';
-        include __DIR__ . '/../views/footer.tpl.php';
-    }
+class UserController extends CoreController{ // récupere les information du parent
+   
 
 
     public function logUser()

@@ -1,27 +1,39 @@
 <?php
 
-class CatalogController {
+namespace App\Controllers;
+
+use App\Models\Category;
+use App\Models\Product;
+use App\Models\Type;
+
+class CatalogController extends CoreController {
     // Gère les requetes get /category
-    // Déclenche l'affichage d'un template spécifique
     
-    private function show($template, $viewVars = [])
-    {
-        
-        include __DIR__ . '/../views/header.tpl.php';
-        include __DIR__ . '/../views/' . $template .'.tpl.php';
-        include __DIR__ . '/../views/footer.tpl.php';
+    public function categories() {
+        $categories = Category::findAll();
+        $this->show('categories', ['categories' => $categories]);
+
+        // ou plus court  $this->show('categories', ['categories' => Category::findAll()]);
+
     }
 
+    
+    
     public function category($params) {
-        // je récupère tous les produits qui correspondent à cette catégorie
         $category = Category::find($params['id']);
+        
+         // je récupère tous les produits qui correspondent à cette catégorie
         $products = $category->products();
         
-        //var_dump($category);
+        dump($category);
         //require_once __DIR__.'/../views/category.tpl.php';
+        dump($products);
         $this->show('category', ['products' => $products,  'category' => $category]);
-
     }
+
+
+
+
 
     public function product($params)
     {
@@ -48,39 +60,7 @@ class CatalogController {
 
 
 
-    public function balisage($params) 
-    {
-        $tplName = 'balisage';
-        $this->show($tplName);
-        // require_once __DIR__.'/../views/balisage.tpl.php';
-    }
-
-
-    public function destockage($params)
-    {
-        $tplName = 'destockage';
-        $this->show($tplName);
-        // require_once __DIR__.'/../views/destockage.tpl.php';
-    }
-
-
-    public function gobelet($params)
-    {
-        $tplName = 'gobelet';
-        $this->show($tplName);
-// require_once __DIR__.'/../views/gobelet.tpl.php';
-    }
-
-
-    public function materiel($params)
-    {
-        // Avant d'afficher le bon template il faut récupérer les données du produit demandé dans la BDD.
-        //$product = Product::find($params['id']);
-         $tplName = 'materiel';
-         $this->show($tplName, [$tplName => $tplName]);
-    // require_once __DIR__.'/../views/materiel.tpl.php';
-    }
-
+    
 
     
   }

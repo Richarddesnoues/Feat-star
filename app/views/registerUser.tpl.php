@@ -29,7 +29,8 @@
 
     <div class="newUser">
         <p>Déjà client ?</p>
-        <input type="submit" value="Se connecter">
+        <button type="submit" class="addUser"><a href="<?= $router->url('account/login') ?>">Se connecter</a></button>
+
         
     </div>
 

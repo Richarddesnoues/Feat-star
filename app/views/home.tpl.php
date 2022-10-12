@@ -18,6 +18,9 @@
             <p>Vous trouverez ici une large sélection d'équipement pour la sécurisation de circuit et aussi tous le matériel necessaire pour vos évenements. </p>
 
         </div>
+
+        <!-- TODO UTILISER UN FOREACH POUR AFFICHER CHAQUE CATEGORIE -->
+        <!-- Gallery des category -->
         <div class="gallery">
             <div class="gobelet banniere"><a href="#">
                     <div class="cover">

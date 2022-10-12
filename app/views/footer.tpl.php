@@ -44,7 +44,8 @@
 
 
         </footer>
-        <script src="<?= $router->url('assets/js/index.js')?>"></script>
+        <script src="<?= $router->url('assets/js/burger.js')?>"></script>
+        <script src="<?= $router->url('assets/js/app.js')?>"></script>
     </body>
 
 </html>

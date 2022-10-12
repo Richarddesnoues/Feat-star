@@ -1,6 +1,9 @@
 <?php
 
-class Router
+namespace App;
+
+
+class Router 
 //pour chaque action je vais créer une fonction
 {
     public $router;
@@ -14,7 +17,7 @@ class Router
 
     public function __construct() // 1# Initialisation
     {
-        $this->router = new AltoRouter();
+        $this->router = new \AltoRouter();
 
          //$baseUrl = substr($_SERVER['PHP_SELF'], 0, -1 * strlen('/index.php'));
          //$this->router->setBasePath($baseUrl);

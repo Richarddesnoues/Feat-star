@@ -21,14 +21,14 @@
                     <a href="#"><p>Mot de passe oublié ?</p></a>
                 </div>
             </div>
-            <input type="submit" value="Se connecter">
+            <input button type="submit" value="Se connecter">
         
         </div>
     </form>
 
     <div class="newUser">
         <p>Nouveau client ?</p>
-        <button class="addUser"><a href="#">Créer un compte</a></button>
+        <button class="addUser"><a href="<?= $router->url('account/register') ?>">Créer un compte</a></button>
     </div>
 
 

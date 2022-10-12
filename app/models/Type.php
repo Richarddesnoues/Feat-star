@@ -1,7 +1,9 @@
 <?php
 
 
+namespace App\Models;
 
+use App\Database;
 
 class Type 
 {
@@ -21,7 +23,7 @@ class Type
         $pdo = Database::getPDO();
         $pdoStatement = $pdo->query($sql);
     //var_dump($pdo);
-        return $pdoStatement->fetchObject('Type');
+        return $pdoStatement->fetchObject('App\Models\Type');
     }
 
 /***************************************GETTERS et SETTERS***************************************** */

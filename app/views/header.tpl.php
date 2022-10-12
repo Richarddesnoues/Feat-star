@@ -1,7 +1,8 @@
 
-<?php global $router;?>
+<?php global $router; ?>
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -12,14 +13,15 @@
 
     <link rel="stylesheet" href="<?= $router->url('assets/css/404.css'); ?>">
     <link rel="stylesheet" href="<?= $router->url('assets/css/contact.css'); ?>">
-    <link rel="stylesheet" href="<?= $router->url('assets/css/user.css') ;?>">
+    <link rel="stylesheet" href="<?= $router->url('assets/css/user.css'); ?>">
     <link rel="stylesheet" href="<?= $router->url('assets/css/cart.css'); ?>">
     <link rel="stylesheet" href="<?= $router->url('assets/css/cgv.css'); ?>">
     <link rel="stylesheet" href="<?= $router->url('assets/css/product.css'); ?>">
+    <link rel="stylesheet" href="<?= $router->url('assets/css/category.css'); ?>">
+    <link rel="stylesheet" href="<?= $router->url('assets/css/destockage.css'); ?>">
 
-    
 
-    
+
 
 
     <title>Feat*</title>
@@ -28,30 +30,27 @@
 <body>
     <div class="header">
         <div class="logo">
-            <a href='./'><img src="<?= $router->url('assets/img/feat-logo-254x87-fluo.png');?>" alt="logo du site"></a>
+            <a href="<?= $router->url('') ?>"><img src="<?= $router->url('assets/img/feat-logo-254x87-fluo.png'); ?>" alt="logo du site"></a>
         </div>
         <nav class="navbar">
             <ul class="nav_items">
                 <li class="volet_connection">
+
+                    <a href="<?= $router->url('account/login') ?>">Se connecter</a>
+                </li>
+
+                <?php $categories = App\Models\Category::findAll();
+                foreach ($categories as $cat) {
+                    echo '<li class="navItem"><a href="' . $router->url('catalogue/categorie/' . $cat->id) .'"> '.$cat->name.'</a></li>';
+                } ?>
+
+
+
                 
-                    <a href='#'>Se connecter</a>
-                </li>
-                <li class ="navItem <?= $template === 'gobelet' ? 'active' : ''; ?>"> 
-                    <a href="">Gobelets</a>      
-                </li>
 
-                <li class ="navItem <?= $template === 'balisage' ? 'active' : ''; ?>">
-                    <a href='./balisage'>Balisage</a>
-                </li>
 
-                <li class ="navItem <?= $template === 'materiel' ? 'active' : ''; ?>">
-                    <a href='./materiel'>Matériel évenementiel</a>
-                </li>
 
-                <li class ="navItem <?= $template === 'destockage' ? 'active' : ''; ?>">
-                    <a href='./destockage'>Déstockage</a>
-                </li>
-
+               
 
             </ul>
         </nav>

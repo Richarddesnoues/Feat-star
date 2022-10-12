@@ -4,9 +4,11 @@
      <div class="breadcrum">
          <li>Accueil</li> /
          <li>
-            <a href= "<?= $viewVars['category']->getName(); ?>"> <?= $viewVars['category']->getName(); ?></a>
+
+         <!-- TODO FAIRE UN LIENS DANS LE FIL D'ARRIANE -->
+            <a href= "<?= $router->url("catalogue/categorie/{$viewVars['category']->getId()}"); ?>"> <?= $viewVars['category']->getName(); ?></a>
         </li> /
-         <li>
+         <li> 
             <a href= "<?= $viewVars['product']->getName(); ?>"><?= $viewVars['product']->getName(); ?></a>
         </li>
      </div>
@@ -14,7 +16,7 @@
      <div class="display">
          <div class="leftDisplay">
              <div class="img_items">
-                 <img class="img_item" src="<?= $router->url($viewVars['product']->getPicture()); ?>" alt="product">
+                 <img class="img_item" src="<?= $router->url($viewVars['product']->getPicture()); ?>" alt="image du">
              </div>
          </div>
 

@@ -1,8 +1,13 @@
 <?php
 
+namespace App\Models;
+
+use App\Database;
+use PDO;
+
 class Category {
     public $id;
-    private $name;
+    public $name;
     private $subtitle;
     private $picture;
     private $created_at;
@@ -17,13 +22,13 @@ class Category {
         $sql = "
         SELECT *
         FROM product
-        WHERE category_id = $this->id;
+        WHERE category_id = $this->id
         ";
     
         $pdo = Database::getPDO();
         $pdoStatement = $pdo->query($sql);
-    var_dump($pdo);
-        return $pdoStatement->fetchAll(PDO::FETCH_CLASS, 'Product');
+
+        return $pdoStatement->fetchAll(PDO::FETCH_CLASS, 'App\Models\Product');
     }
 
     static public function findAll() {
@@ -37,7 +42,7 @@ class Category {
         $pdo = Database::getPDO();
         $pdoStatement = $pdo->query($sql);
     
-        return $pdoStatement->fetchAll(PDO::FETCH_CLASS, 'Category');
+        return $pdoStatement->fetchAll(PDO::FETCH_CLASS, 'App\Models\Category');
       }
     /**
      * La method find permet de retrouver en BDD les infos d'un produit spécifique, en fonction d'un ID.
@@ -55,7 +60,7 @@ class Category {
         $pdo = Database::getPDO();//connection
         $pdoStatement = $pdo->query($sql);// exécution
     
-        return $pdoStatement->fetchObject('Category');
+        return $pdoStatement->fetchObject('App\Models\Category');
       }
 
 
@@ -219,4 +224,24 @@ class Category {
    
 
   
+
+    /**
+     * Get the value of id
+     */ 
+    public function getId()
+    {
+        return $this->id;
+    }
+
+    /**
+     * Set the value of id
+     *
+     * @return  self
+     */ 
+    public function setId($id)
+    {
+        $this->id = $id;
+
+        return $this;
+    }
 }

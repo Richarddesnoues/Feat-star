@@ -1,5 +1,10 @@
 <?php 
 
+namespace App\Models;
+
+use App\Database;
+use PDO;
+
 class Product {
     private $id;
     private $name;
@@ -23,7 +28,7 @@ class Product {
         $pdo = Database::getPDO();
         $pdoStatement = $pdo->query($sql);
     
-        return $pdoStatement->fetchAll(PDO::FETCH_CLASS, 'Product');
+        return $pdoStatement->fetchAll(PDO::FETCH_CLASS, 'App\Models\Product');
       }
 
 
@@ -43,7 +48,7 @@ class Product {
         $pdo = Database::getPDO();
         $pdoStatement = $pdo->query($sql);
     //var_dump($pdo);
-        return $pdoStatement->fetchObject('Product');
+        return $pdoStatement->fetchObject('App\Models\Product');
     }
 
    

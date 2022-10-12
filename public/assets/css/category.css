@@ -1,0 +1,48 @@
+
+.item_wrap {
+    display: flex;
+    flex-wrap: wrap;
+    
+    gap:20px;
+   
+}
+
+
+
+
+.item_bloc {
+    width: 300px;
+    /* background-color: #f0f; */
+    margin-top: 30px ;
+   padding-bottom: 16px;
+   
+
+} 
+
+.product_category {
+    width: 70%;
+    margin: auto;
+    padding-bottom: 30px;
+    border-bottom: 1px solid #FF3030;
+   
+}
+
+.item_picture img {
+
+    width: 254px;
+    height: 254px;
+}
+
+.productList {
+    /* background-color: blue; */
+}
+
+.bt_product {
+    padding-top: 16px;
+}
+
+.item_category {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}

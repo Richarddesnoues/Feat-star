@@ -107,6 +107,9 @@ body {
     display: none;
 }
 
+.volet_disconnect {
+    display: none;
+}
 
 
 .navItem.active {
@@ -134,6 +137,7 @@ body {
 .cart {
     display: flex;
     gap: 5px;
+    padding-top: 20px;
 }
 
 .cart:hover {
@@ -143,12 +147,24 @@ body {
 .login {
     display: flex;
     /* background-color: #FF3030; */
+    width: 120px;
+    text-align: center;
+    justify-content: space-around;
+    align-items: center;
     
 }
 
-.login a {
+.login li a {
     margin-left: 5px;
+    
 }
+
+.login li {
+    list-style: none;
+}
+
+
+
 
 .login:hover {
     border-bottom: 1px solid #FF3030;
@@ -160,6 +176,14 @@ body {
 :is(.login a, .cart a)  {
     text-decoration: none;
 }
+
+
+.connect {
+    padding-bottom: 14px;
+}
+
+
+
 
 
 /*-----------------------------MENU BURGER--------------------*/

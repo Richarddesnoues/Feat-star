@@ -1,7 +1,8 @@
 <?php
-session_start();
-require_once __DIR__.'/../vendor/autoload.php';
 
+require_once __DIR__.'/../vendor/autoload.php';
+session_start();
+//dump($_SESSION);
 
 
 //include 'kint.phar';
@@ -32,7 +33,11 @@ $router = new App\Router(); // Initialisation
 
 // l'utilisation d'une chaine de caractere plutot qu'un tableau associatif est plus rapide à écrire
 
-$router->map('GET', '/', 'App\Controllers\MainController#home', /*'main-home'*/); // Déclaration de route
+$router->map('GET', '/', 'App\Controllers\MainController#home', 'main-home'); // Déclaration de route
+
+
+
+
 $router->map('GET', '/panier', 'App\Controllers\CartController#cart'); // Déclaration de route
 
 
@@ -42,16 +47,28 @@ $router->map('GET', '/catalogue/categorie/[i:id]', 'App\Controllers\CatalogContr
 
 $router->map('GET', '/catalogue/produit/[i:id]', 'App\Controllers\CatalogController#product',/*'catalog-product'*/);
 
-$router->map('GET', '/account/login', 'App\Controllers\UserController#logUser');
-$router->map('GET', '/account/register', 'App\Controllers\UserController#registerUser' );
+$router->map('GET', '/account/login', 'App\Controllers\UserController#loginPage');
+$router->map('POST', '/account/login', 'App\Controllers\UserController#login');
+
+$router->map('GET', '/account/logout', 'App\Controllers\UserController#logout' );
+
+$router->map('GET', '/account/register', 'App\Controllers\UserController#registerUserPage' );
+$router->map('POST','/account/register', 'App\Controllers\UserController#registerUser');
+/***********************BackOffice******************* */
+
+
+//$router->map('GET', '/backoffice_home', 'App\Controllers\UserController#login');
+
 
 $match = $router->match();// Vérification d'URL
 
-//$dispatcher = new Dispatcher($match, 'App\Controllers\ErrorController::error404');
+#todo vérifier les dispatcher
 
-//$dispatcher->setControllersNamespace('App\Controllers');
+// $dispatcher = new Dispatcher($match, 'App\Controllers\ErrorController::err404');
 
-//$dispatcher->dispatch();
+// $dispatcher->setControllersNamespace('App\Controllers');
+
+// $dispatcher->dispatch();
 
 
 $router->routeExe(); // Exécution de la route

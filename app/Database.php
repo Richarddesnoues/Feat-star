@@ -8,16 +8,29 @@ use PDO;
 // Retenir son utilisation  => Database::getPDO()
 // Design Pattern : Singleton
 class Database {
-    /** @var PDO */
-    private $dbh;
+    /**
+     * Objet PDO représentant la connexion à la base de données
+     * 
+     * @var PDO
+     */
+   
+    private $db;
+     /**
+     * Propriété statique (liée à la classe) stockant l'unique instance objet
+     * 
+     * @var Database
+     */
     private static $_instance;
+
+
+    
     private function __construct() {
         // Récupération des données du fichier de config
         // la fonction parse_ini_file parse le fichier et retourne un array associatif
         $configData = parse_ini_file(__DIR__.'/config.ini');
 
         try {
-            $this->dbh = new PDO(
+            $this->db= new PDO(
                 "mysql:host={$configData['DB_HOST']};dbname={$configData['DB_NAME']};charset=utf8",
                 $configData['DB_USERNAME'],
                 $configData['DB_PASSWORD'],
@@ -39,6 +52,6 @@ class Database {
         if (empty(self::$_instance)) {
             self::$_instance = new Database();
         }
-        return self::$_instance->dbh;
+        return self::$_instance->db;
     }
 }

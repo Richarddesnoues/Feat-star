@@ -5,7 +5,7 @@ namespace App\Models;
 use App\Database;
 use PDO;
 
-class Category {
+class Category  {
     public $id;
     public $name;
     private $subtitle;
@@ -19,30 +19,46 @@ class Category {
 
 
      public function products() {
-        $sql = "
-        SELECT *
-        FROM product
-        WHERE category_id = $this->id
-        ";
-    
-        $pdo = Database::getPDO();
-        $pdoStatement = $pdo->query($sql);
+        try{
 
-        return $pdoStatement->fetchAll(PDO::FETCH_CLASS, 'App\Models\Product');
+            $sql = "
+            SELECT *
+            FROM product
+            WHERE category_id = $this->id
+            ";
+        
+            $pdo = Database::getPDO();
+            $pdoStatement = $pdo->query($sql);
+    
+            return $pdoStatement->fetchAll(PDO::FETCH_CLASS, 'App\Models\Product');
+        }
+        catch (\PDOException $e) {
+            echo 'cassé' . '<br/>';
+            echo 'erreur: ' . $e->getMessage();
+        }
     }
 
     static public function findAll() {
-        $sql = "
-          SELECT *
-          FROM category
-          ;
-        ";
 
+        try { 
+
+            $sql = "
+              SELECT *
+              FROM category
+              ;
+            ";
     
-        $pdo = Database::getPDO();
-        $pdoStatement = $pdo->query($sql);
-    
-        return $pdoStatement->fetchAll(PDO::FETCH_CLASS, 'App\Models\Category');
+        
+            $pdo = Database::getPDO();
+            $pdoStatement = $pdo->query($sql);
+        
+            return $pdoStatement->fetchAll(PDO::FETCH_CLASS, 'App\Models\Category');
+        }
+        catch (\PDOException $e) {
+            echo 'cassé' . '<br/>';
+            echo 'erreur: ' . $e->getMessage();
+        }
+        
       }
     /**
      * La method find permet de retrouver en BDD les infos d'un produit spécifique, en fonction d'un ID.
@@ -50,17 +66,25 @@ class Category {
      * 
      */
       static public function find($id) {
-        $sql = "
-          SELECT *
-          FROM category
-          WHERE id = $id
-          ;
-        ";
-    
-        $pdo = Database::getPDO();//connection
-        $pdoStatement = $pdo->query($sql);// exécution
-    
-        return $pdoStatement->fetchObject('App\Models\Category');
+
+        try {
+
+            $sql = "
+              SELECT *
+              FROM category
+              WHERE id = $id
+              ;
+            ";
+        
+            $pdo = Database::getPDO();//connection
+            $pdoStatement = $pdo->query($sql);// exécution
+        
+            return $pdoStatement->fetchObject('App\Models\Category');
+        }
+        catch (\PDOException $e) {
+            echo 'cassé' . '<br/>';
+            echo 'erreur: ' . $e->getMessage();
+        }
       }
 
 
@@ -222,26 +246,10 @@ class Category {
     }
 
    
-
-  
-
-    /**
-     * Get the value of id
-     */ 
     public function getId()
     {
-        return $this->id;
+        return $this->id ;
     }
+  
 
-    /**
-     * Set the value of id
-     *
-     * @return  self
-     */ 
-    public function setId($id)
-    {
-        $this->id = $id;
-
-        return $this;
-    }
-}
+}  

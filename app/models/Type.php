@@ -14,16 +14,23 @@ class Type
 
 
     static public function find($id) {
-        $sql = "
-        SELECT *
-        FROM type
-        WHERE id = $id;
-        ";
-    
-        $pdo = Database::getPDO();
-        $pdoStatement = $pdo->query($sql);
-    //var_dump($pdo);
-        return $pdoStatement->fetchObject('App\Models\Type');
+        try{
+
+            $sql = "
+            SELECT *
+            FROM type
+            WHERE id = $id;
+            ";
+        
+            $pdo = Database::getPDO();
+            $pdoStatement = $pdo->query($sql);
+        //var_dump($pdo);
+            return $pdoStatement->fetchObject('App\Models\Type');
+        }
+        catch (\PDOException $e) {
+            echo 'cassé' . '<br/>';
+            echo 'erreur: ' . $e->getMessage();
+        }
     }
 
 /***************************************GETTERS et SETTERS***************************************** */

@@ -19,16 +19,24 @@ class Product {
 
 
     static public function findAll() {
-        $sql = "
-          SELECT *
-          FROM product
-          ;
-        ";
-    
-        $pdo = Database::getPDO();
-        $pdoStatement = $pdo->query($sql);
-    
-        return $pdoStatement->fetchAll(PDO::FETCH_CLASS, 'App\Models\Product');
+
+        try {
+
+            $sql = "
+              SELECT *
+              FROM product
+              ;
+            ";
+        
+            $pdo = Database::getPDO();
+            $pdoStatement = $pdo->query($sql);
+        
+            return $pdoStatement->fetchAll(PDO::FETCH_CLASS, 'App\Models\Product');
+        }
+        catch (\PDOException $e) {
+            echo 'cassé' . '<br/>';
+            echo 'erreur: ' . $e->getMessage();
+        }
       }
 
 
@@ -39,16 +47,24 @@ class Product {
 
 
     static public function find($id) {
-        $sql = "
-        SELECT *
-        FROM product
-        WHERE id = $id;
-        ";
-    
-        $pdo = Database::getPDO();
-        $pdoStatement = $pdo->query($sql);
-    //var_dump($pdo);
-        return $pdoStatement->fetchObject('App\Models\Product');
+
+        try {
+
+            $sql = "
+            SELECT *
+            FROM product
+            WHERE id = $id;
+            ";
+        
+            $pdo = Database::getPDO();
+            $pdoStatement = $pdo->query($sql);
+        //var_dump($pdo);
+            return $pdoStatement->fetchObject('App\Models\Product');
+        }
+        catch (\PDOException $e) {
+            echo 'cassé' . '<br/>';
+            echo 'erreur: ' . $e->getMessage();
+        }
     }
 
    

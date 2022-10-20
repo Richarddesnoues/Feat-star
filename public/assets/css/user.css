@@ -4,7 +4,10 @@
 
 
 
-
+/* ********************login***************** */
+input {
+  background-color: #F2F2F2;
+}
 
 
 .user {
@@ -102,6 +105,25 @@
 .addUser a {
     text-decoration: none;
 }
+
+/************ INSCRIPTION****************************/
+
+
+
+
+
+.mdp_group {
+  display: flex;
+  flex-direction: column;
+  align-items: center ;  
+  height: 200px;
+  justify-content: space-around;
+}
+
+
+
+
+
 
 
 /****************************************MEDIA QUERY*****************************************/

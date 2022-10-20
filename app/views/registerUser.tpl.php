@@ -10,18 +10,20 @@
         <h1>Nouveau client</h1>
     </div>
 
-    <form class="form" action ="" method="post">
+    <form class="form" action ="<?= $router->url('account/register') ?>" method="POST">
         <div class="form_group">
-        
+        <?php if(isset($err_mdp)){echo '<div>'. $err_mdp . '</div>';}?>
             <input type="email" id="email" name="email" placeholder="Saisissez votre adress email..." >
+            <input class="email_verif" type="email" name="email_verif"  placeholder="Confirmation Mail" >
+            
             <div class="mdp_group">
                 
                 <input type="password" id="password" name="password" placeholder="Entrez votre mot de passe">
-                <div class="mdp">
-                    <a href="#"><p>Mot de passe oublié ?</p></a>
-                </div>
+                <input type="password" name="password_verif"  placeholder="Confirmation mot de passe">
+                <input class="pseudo" type ="text" name="pseudo" placeholder="Pseudo">
+                <button class="addUser" type="submit"><a href="<?= $router->url('account/register') ?>">Inscription</a></button>
             </div>
-            <button class="addUser"><a href="#">Créer un compte</a></button>
+
             
         
         </div>

@@ -25,9 +25,9 @@ class CatalogController extends CoreController {
          // je récupère tous les produits qui correspondent à cette catégorie
         $products = $category->products();
         
-        dump($category);
+        //dump($category);
         //require_once __DIR__.'/../views/category.tpl.php';
-        dump($products);
+        //dump($products);
         $this->show('category', ['products' => $products,  'category' => $category]);
     }
 

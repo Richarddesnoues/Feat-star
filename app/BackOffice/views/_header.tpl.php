@@ -1,4 +1,3 @@
-
 <?php global $router; ?>
 <!DOCTYPE html>
 <html lang="fr">
@@ -39,18 +38,28 @@
                 <?php if (!isset($_SESSION['userId'])) : ?>
                 <li class="volet_connection">
                     <a href="<?= $router->url('account/login') ?>">Se connecter </a>   
-                    <?php else: ?>
-                <li class="volet_disconnect">
-                    <a href="<?= $router->url('account/logout') ?>">Deconnexion </a>          
                 </li>
-                    <?php endif; ?>
-                
+                <?php else: ?>
+                    <li class="volet_disconect">
+                    <a href="#">
+                            <p>Deconnexion</p>
+                        </a>
+                    </li>
+                <?php endif; ?>
                 <!-- / menu burger -->
                 
                 <?php $categories = App\Models\Category::findAll();
                 foreach ($categories as $cat) {
                     echo '<li class="navItem"><a href="' . $router->url('catalogue/categorie/' . $cat->id) .'"> '.$cat->name.'</a></li>';
                 } ?>
+
+
+
+                
+
+
+
+               
 
             </ul>
         </nav>
@@ -67,7 +76,7 @@
                     </li>
                 <?php else: ?>
                     <li class ="disconect">
-                        <a href="<?= $router->url('account/logout') ?>">
+                        <a href="#">
                             <p>Deconnexion</p>
                         </a>
                     </li>

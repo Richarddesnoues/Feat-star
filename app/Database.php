@@ -46,9 +46,9 @@ class Database {
             exit;
         }
     }
-    // the unique method you need to use
+    //La seule méthode que j'ai besoin d'utiliser
     public static function getPDO() {
-        // If no instance => create one
+        // si il n'y a pas d'instance => j'en crée une
         if (empty(self::$_instance)) {
             self::$_instance = new Database();
         }

@@ -1,7 +1,7 @@
 <?php
 namespace App\Models;
 
-// Classe mèe de tous les models
+// Classe mère de tous les models
 //centralisation de toutes les propriétés et méthodes utiles pour tous les models
 
 
@@ -166,10 +166,10 @@ abstract class CoreModel {
     // en créant des méthodes abstraites, on oblige les enfants de coreModel
     // à implémenter ces méthodes. Ne pas le faire génère une erreur et bloque notre site.
     // On peut décrire le type d eméthode directement dans coreModel:
-    abstract static public function find($id);
-    abstract static public function findAll();
-    abstract public function insert();
-    abstract public function update();
-    abstract public function delete();
+    // abstract static public function find($id);
+    // abstract static public function findAll();
+    // abstract public function insert();
+    // abstract public function update();
+    // abstract public function delete();
 
 }

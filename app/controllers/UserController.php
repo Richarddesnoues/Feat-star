@@ -19,11 +19,6 @@ class UserController extends CoreController
     }
 
 
-    public function loginBack()
-    {
-        $this->show('_home');
-    }
-
 
 
 
@@ -138,7 +133,7 @@ class UserController extends CoreController
         // On peut sauvegarder l'utilisateur.
         
         if (!$newUser->insert()) {
-            exit;
+            exit();
 
 
         }

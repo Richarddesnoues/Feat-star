@@ -3,12 +3,12 @@
 namespace App\Controllers;
 
 
-class CoreController 
+abstract class CoreController 
 {
     // Déclenche l'affichage d'un template spécifique
-    protected function show($template, $viewVars = []) // La visibilité à été modifié en protected car ce la authorise le parent à transmetre ses données
+    protected function show($template, $viewVars = []) // La visibilité à été modifié en protected car cela autorise le parent à transmetre ses données
     {                
-                                          // contrairement à private
+                                                      // contrairement à private
         
     
 

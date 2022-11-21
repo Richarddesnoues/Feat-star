@@ -17,6 +17,7 @@ class CatalogController extends CoreController {
 
     }
 
+   
     
     
     public function category($params) {

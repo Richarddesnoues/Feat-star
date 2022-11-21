@@ -5,7 +5,7 @@ namespace App\Models;
 use App\Database;
 use PDO;
 
-class Category  {
+class Category   {
     public $id;
     public $name;
     private $subtitle;

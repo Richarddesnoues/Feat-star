@@ -10,7 +10,7 @@ class Router
     public $match;
     // public $baseUrl;
    
-    
+     
     
     
 
@@ -19,10 +19,9 @@ class Router
     {
         $this->router = new \AltoRouter();
 
-         //$baseUrl = substr($_SERVER['PHP_SELF'], 0, -1 * strlen('/index.php'));
-         //$this->router->setBasePath($baseUrl);
+        
          $this->router->setBasePath($_SERVER['BASE_URI']);// Voir doc Apache
-        // global $baseUrl;
+        
 
     }
 
@@ -39,7 +38,7 @@ class Router
     {
 
         $this->match = $this->router->match();
-        //var_dump($this->match);
+        var_dump($this->match);
         
     }
 
@@ -73,15 +72,14 @@ class Router
 
 
         $controller = new $controllerName();
-
+        dump($controllerName);
 
         $controller->$methodName($this->match['params']);// ici on récupèrent l'id qui sera utilisée dans les method des routeurs
     }
 
     //Tentative de lier le css dynamiquement
     public function url($relativePath) {
-        //return ($_SERVER['PHP_SELF'].'/app'. $relativePath); Fonctionne à peu près!
-        // return substr($_SERVER['PHP_SELF'].'/app'.$relativePath, 0, -1 * strlen('/index.php')); 
+        
         return $_SERVER['BASE_URI'] . '/' .$relativePath;
 
         //ici je prend la base de l'url puis je lui concatene le '/' puis le chemin vers le css que j'indiqué dans le header

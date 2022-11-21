@@ -54,8 +54,6 @@ class User
 
             $pdo = Database::getPDO();
 
-
-
             $sql = " INSERT INTO `user` (pseudo, email, password )  
                 VALUE (:pseudo, :email , :password)";
 
@@ -85,6 +83,11 @@ class User
             echo 'erreur: ' . $e->getMessage();
         }
     }
+
+
+
+
+    
 
     public function update()
     {

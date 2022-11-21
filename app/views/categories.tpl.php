@@ -1,6 +1,6 @@
 
 
-<?php global $router; ?>
+ <?php global $router; ?>
 
 <section class="categories">
     <div class="categoryList">
@@ -25,4 +25,4 @@
         </div>
     <?php endforeach; ?>
     </div>
-</section>
+</section> 

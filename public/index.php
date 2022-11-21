@@ -41,7 +41,7 @@ $router->map('GET', '/', 'App\Controllers\MainController#home', 'main-home'); //
 $router->map('GET', '/panier', 'App\Controllers\CartController#cart'); // Déclaration de route
 
 
-$router->map('GET', '/catalogue/categories', 'App\Controllers\CatalogController#categories');
+// $router->map('GET', '/catalogue/categories', 'App\Controllers\CatalogController#categories');
 $router->map('GET', '/catalogue/categorie/[i:id]', 'App\Controllers\CatalogController#category','catalogue-categorie');
 
 
@@ -54,15 +54,15 @@ $router->map('GET', '/account/logout', 'App\Controllers\UserController#logout' )
 
 $router->map('GET', '/account/register', 'App\Controllers\UserController#registerUserPage' );
 $router->map('POST','/account/register', 'App\Controllers\UserController#registerUser');
-/***********************BackOffice******************* */
 
 
-//$router->map('GET', '/backoffice_home', 'App\Controllers\UserController#login');
+
+
 
 
 $match = $router->match();// Vérification d'URL
 
-#todo vérifier les dispatcher
+#todo vérifier les dispatcher de Altodispatch
 
 // $dispatcher = new Dispatcher($match, 'App\Controllers\ErrorController::err404');
 

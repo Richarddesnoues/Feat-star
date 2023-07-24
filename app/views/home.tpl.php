@@ -22,19 +22,16 @@
         <!-- TODO UTILISER UN FOREACH POUR AFFICHER CHAQUE CATEGORIE -->
         <!-- Gallery des category -->
         <div class="gallery">
-            <div class="gobelet banniere"><a href="#">
+            <div class="gobelet banniere">
                     <div class="cover">
-
                         <div class="text">
-                            <p>Retrouver tous nos gobelets</p>
-                            <button>Gobelet</button>
+                            <p>Retrouver tous nos gobelets</p>   
                         </div>
                     </div>
                     <div class="category category1">
+                        <!-- <a href="<?= $router->url('catalogue/categorie/' . $cat->id) ?>"> <h2>Gobelets</h2></a> -->
                         <h2>Gobelets</h2>
-
-                    </div>
-                    <!-- <img src="./assets/img/products/gobelet-330-ml.jpg" alt="photo d'un gobelet"> -->
+                    </div>                    
             </div></a>
 
             <div class="balise banniere"><a href="#">

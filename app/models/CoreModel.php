@@ -1,4 +1,5 @@
 <?php
+
 namespace App\Models;
 
 // Classe mère de tous les models
@@ -9,167 +10,80 @@ namespace App\Models;
 // Elle permet aussi de définir les propriétés et méthodes que ses enfants devront obligatoirement avoir.
 
 
-abstract class CoreModel {
+abstract class CoreModel
+{
 
-
-  
+    /**
+     * @var int
+     */
     protected $id;
+    /**
+     * @var string
+     */
     protected $created_at;
+    /**
+     * @var string
+     */
     protected $updated_at;
-
 
 
     /**
      * Get the value of id
-     */ 
-    public function getId()
+     *
+     * @return  int
+     */
+    public function getId(): ?int
     {
         return $this->id;
     }
 
     /**
-     * Set the value of id
-     *
-     * @return  self
-     */ 
-    public function setId($id)
-    {
-        $this->id = $id;
-
-        return $this;
-    }
-
-    /**
-     * Get the value of pseudo
-     */ 
-    public function getPseudo()
-    {
-        return $this->pseudo;
-    }
-
-    /**
-     * Set the value of pseudo
-     *
-     * @return  self
-     */ 
-    public function setPseudo($pseudo)
-    {
-        $this->pseudo = $pseudo;
-
-        return $this;
-    }
-
-    /**
-     * Get the value of email
-     */ 
-    public function getEmail()
-    {
-        return $this->email;
-    }
-
-    /**
-     * Set the value of email
-     *
-     * @return  self
-     */ 
-    public function setEmail($email)
-    {
-        $this->email = $email;
-
-        return $this;
-    }
-
-    /**
-     * Get the value of password
-     */ 
-    public function getPassword()
-    {
-        return $this->password;
-    }
-
-    /**
-     * Set the value of password
-     *
-     * @return  self
-     */ 
-    public function setPassword($password)
-    {
-        $this->password = $password;
-
-        return $this;
-    }
-
-    /**
-     * Get the value of isAdmin
-     */ 
-    public function getIsAdmin()
-    {
-        return $this->isAdmin;
-    }
-
-    /**
-     * Set the value of isAdmin
-     *
-     * @return  self
-     */ 
-    public function setIsAdmin($isAdmin)
-    {
-        $this->isAdmin = $isAdmin;
-
-        return $this;
-    }
-     
-
-    /**
      * Get the value of created_at
-     */ 
-    public function getCreated_at()
+     *
+     * @return  string
+     */
+    public function getCreatedAt(): string
     {
         return $this->created_at;
     }
 
     /**
-     * Set the value of created_at
-     *
-     * @return  self
-     */ 
-    public function setCreated_at($created_at)
-    {
-        $this->created_at = $created_at;
-
-        return $this;
-    }
-
-    /**
      * Get the value of updated_at
-     */ 
-    public function getUpdated_at()
+     *
+     * @return  string
+     */
+    public function getUpdatedAt(): string
     {
         return $this->updated_at;
     }
 
     /**
-     * Set the value of updated_at
+     * Méthode permettant de sauvegarder une entité dans la BDD. Elle fait le choix d'ajouter ou de modifier une entrée de la BDD selon si c'est une entité qui existe déjà ou non.
      *
-     * @return  self
-     */ 
-    public function setUpdated_at($updated_at)
+     * @return bool
+     */
+    public function save()
     {
-        $this->updated_at = $updated_at;
+        // On vérifie que notre entité existe déjà, c'est à dire qu'elle a un ID non nul.
+        // Si c'est le cas on met à jour l'entrée dans la BDD
+        if ($this->id > 0) {
+            // On appelle la méthode update (qui est obligatoirement implémentée par le model enfant car abstraite), elle nous renvoie une valeur booléenne (true si la mise à marché). 
+            $result = $this->update();
+            // Sinon on ajoute une une entrée dans la BDD
+        } else {
+            // Sur le meme principe, on va insérer une nouvelle entrée dans la BDD.
+            $result = $this->insert();
+        }
 
-        return $this;
+        // $result contient true si l'insertion ou mise à jour à marché. False, si ça n'a pas marché. On renvoie donc cette valeur pour indiquer le bon déroulement de la requete.
+        return $result;
     }
 
+    // En créant des méthodes abstraites, on oblige les enfants de coreModel à implémenter ces méthodes. Ne pas le faire génère une erreur et bloque notre site.
+    // On peut décrire le type de méthode directement dans coreModel : statique ? publique ? privée ? 
+    abstract static public function find($id);
+    abstract static public function findAll();
+    abstract public function insert();
+    abstract public function update();
     
-
-
-    // en créant des méthodes abstraites, on oblige les enfants de coreModel
-    // à implémenter ces méthodes. Ne pas le faire génère une erreur et bloque notre site.
-    // On peut décrire le type d eméthode directement dans coreModel:
-    // abstract static public function find($id);
-    // abstract static public function findAll();
-    // abstract public function insert();
-    // abstract public function update();
-    // abstract public function delete();
-
 }

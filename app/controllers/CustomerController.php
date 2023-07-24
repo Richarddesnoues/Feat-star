@@ -1,26 +1,16 @@
 <?php
 
 namespace App\Controllers;
+use App\Models\Customer;
 
-use App\Models\User;
-
-
-class UserController extends CoreController
+class CustomerController extends CoreController
 { // récupere les information du parent
-
-
     public function loginPage()
     {
-
-
         //$tplName = 'user';
-        $this->show('user');
+        $this->show('customer');
         // require_once __DIR__.'/../views/user.tpl.php';
     }
-
-
-
-
 
     public function login()
     {
@@ -30,20 +20,19 @@ class UserController extends CoreController
         $password = filter_input(INPUT_POST, htmlspecialchars('password'));
 
         // On récupère l'utilisateur d'après son adresse email
-        $user = User::finByEmail($email);
+        $customer = Customer::finByEmail($email);
 
-
-        // si l'utilisateur existe (donc si $user n'est pas false)
-        if ($user) {
+        // si l'utilisateur existe (donc si $customer n'est pas false)
+        if ($customer) {
 
             // on vérifie que le mot de passe de l'utilisateur correspond à celui tapé dans le champ
             // la fonction password_verify correspond au hash du mot de passe dans la BDD
             #todo mettre password_verify()
-            if ($password == $user->getPassword()) {
+            if (password_verify($password, $customer->getPassword())) {
 
                 // On stock les infos de l'utilisateur dans sa session (son coffre fort dont la clé est son cookie PHPSESSID)
-                $_SESSION['userId'] = $user->getId();
-                $_SESSION['connected'] = $user;
+                $_SESSION['customerId'] = $customer->getId();
+                $_SESSION['connectedCustomer'] = $customer;
 
                 // Une fois connecter on redirige vers la page d'accueil
                 header('Location: ' . $router->url(''));
@@ -55,46 +44,36 @@ class UserController extends CoreController
         }
     }
 
-
     public function logout()
     {
         global $router;
         // On supprime les entrées liées à mon utilisateur dans la session
-        unset($_SESSION['userId']);
-        unset($_SESSION['connectedUser']);
-
+        unset($_SESSION['customerId']);
+        unset($_SESSION['connectedCustomer']);
         header('Location: ' . $router->url('account/login'));
     }
 
-
-
-    public function registerUserPage()
+    public function registerCustomerPage()
     {
-        $this->show('registerUser');
+        
+        $this->show('registerCustomer');
     }
 
-
-    public function registerUser()
+    public function registerCustomer()
     {
-       
         global $router;
-        
-
         // On récupère les valeurs de nos champs
         $email = filter_input(INPUT_POST, 'email', FILTER_SANITIZE_EMAIL);
         $password = filter_input(INPUT_POST, 'password');
         $passwordVerif = filter_input(INPUT_POST, 'password_verif');
         $pseudo=filter_input(INPUT_POST, 'pseudo');
 
-        
-
-
         // On vérifie que tous les champs sont bien remplis en bouclant sur ceux-ci
         foreach ($_POST as $field) {
             // Si un champ est vide
             if (empty($field)) {
-
-            
+                // On stocke dans la liste des erreurs le message à afficher
+                $err_mdp[] = "Tous les champs doivent etre remplis !";
                 // Puis on arrete la boucle (pas besoin de continuer, on sait qu'au moins des champs est vide).
                 break;
             }
@@ -105,42 +84,33 @@ class UserController extends CoreController
             $err_mdp = "Le mot de passe et sa confirmation ne sont pas identiques !";
         }
         
-
         // On vérifie que l'email a le bon format
         $emailValidated = filter_var($email, FILTER_VALIDATE_EMAIL);
 
-
         // Si l'email n'est pas valide, alors on stocke un nouveau message d'erreur.
         if (!$emailValidated) {
-            echo "L'adresse email n'est pas valide !";
+            $errorsList[] = "L'adresse email n'est pas valide !";
         }
 
+        $newCustomer = new Customer();
+        $newCustomer->setEmail($email);
+        $newCustomer->setPassword($password);
+        $newCustomer->setPseudo($pseudo);
 
-
-
-        $newUser = new User();
-
-        $newUser->setEmail($email);
-        $newUser->setPassword($password);
-        $newUser->setPseudo($pseudo);
-
-
-        
-        // On procède au hash du mot de passe
-        $hashedPassword = password_hash($newUser->getPassword(), PASSWORD_DEFAULT);
-        // Puis on sauvegarde le mot de passe hashé dans notre propriété Password
-        $newUser->setPassword($hashedPassword);
-        // On peut sauvegarder l'utilisateur.
-        
-        if (!$newUser->insert()) {
-            exit();
-
-
-        }
-      
-        // On redirige l'utilisateur vers cette page
-        header('Location: ' . $router->url(''));
-        
-        
+          // On vérifie que le tableau d'erreurs est vide
+          if(empty($errorsList)) {
+            // On procède au hash du mot de passe
+            $hashedPassword = password_hash($newCustomer->getPassword(), PASSWORD_DEFAULT);
+            // Puis on sauvegarde le mot de passe hashé dans notre propriété Password
+            $newCustomer->setPassword($hashedPassword);
+            // On peut sauvegarder l'utilisateur.
+            if($newCustomer->insert()) {
+               // On redirige l'utilisateur vers cette page
+                header('Location: ' . $router->url(''));
+            }    
+        } else {
+            // On raffiche le formulaire en lui passant notre tableau d'erreurs.
+            $this->show('customer', ['errorsList' => $errorsList, 'customer' => $newCustomer]);
+        }           
     }
 }

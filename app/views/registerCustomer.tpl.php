@@ -10,7 +10,7 @@
         <h1>Nouveau client</h1>
     </div>
 
-    <form class="form" action ="<?= $router->url('account/register') ?>" method="POST">
+    <form class="form" action ="<?= $router->url('account/register') ?>" method="post">
         <div class="form_group">
         <?php if(isset($err_mdp)){echo '<div>'. $err_mdp . '</div>';}?>
             <input type="email" id="email" name="email" placeholder="Saisissez votre adress email..." >
@@ -31,9 +31,7 @@
 
     <div class="newUser">
         <p>Déjà client ?</p>
-        <button type="submit" class="addUser"><a href="<?= $router->url('account/login') ?>">Se connecter</a></button>
-
-        
+        <button type="submit" class="addUser"><a href="<?= $router->url('account/login') ?>">Se connecter</a></button>  
     </div>
 
 

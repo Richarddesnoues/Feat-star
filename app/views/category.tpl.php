@@ -9,12 +9,8 @@
         <?php foreach ($viewVars['products'] as $currentProduct) : ?>
             <?php //var_dump($viewVars['category']->getName()) 
             ?>
-
-
             <div class="item_bloc">
                 <div class="item_category">
-
-
                     <div class="item_picture">
                         <img src="<?= $router->url($currentProduct->getPicture()); ?>" alt="<?= $currentProduct->getName() ?>">
                     </div>

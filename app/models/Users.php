@@ -12,7 +12,7 @@ class User
     private $pseudo;
     private $email;
     private $password;
-    private $isAdmin;
+    
 
 
     /**
@@ -240,26 +240,6 @@ class User
     public function setPassword($password)
     {
         $this->password = $password;
-
-        return $this;
-    }
-
-    /**
-     * Get the value of isAdmin
-     */
-    public function getIsAdmin()
-    {
-        return $this->isAdmin;
-    }
-
-    /**
-     * Set the value of isAdmin
-     *
-     * @return  self
-     */
-    public function setIsAdmin($isAdmin)
-    {
-        $this->isAdmin = $isAdmin;
 
         return $this;
     }

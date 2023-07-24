@@ -33,27 +33,57 @@ $router = new App\Router(); // Initialisation
 
 // l'utilisation d'une chaine de caractere plutot qu'un tableau associatif est plus rapide à écrire
 
-$router->map('GET', '/', 'App\Controllers\MainController#home', 'main-home'); // Déclaration de route
+$router->map(
+    'GET',
+    '/',
+    'App\Controllers\MainController#home',
+    'main-home'); // Déclaration de route
 
 
 
 
-$router->map('GET', '/panier', 'App\Controllers\CartController#cart'); // Déclaration de route
+$router->map('GET',
+'/cart',
+'App\Controllers\CartController#cart',
+'cart-cart'); // Déclaration de route
 
 
-// $router->map('GET', '/catalogue/categories', 'App\Controllers\CatalogController#categories');
-$router->map('GET', '/catalogue/categorie/[i:id]', 'App\Controllers\CatalogController#category','catalogue-categorie');
+
+$router->map('GET',
+'/catalogue/categorie/[i:id]',
+'App\Controllers\CatalogController#category',
+'catalogue-categorie');
 
 
-$router->map('GET', '/catalogue/produit/[i:id]', 'App\Controllers\CatalogController#product',/*'catalog-product'*/);
+$router->map('GET',
+'/catalogue/produit/[i:id]',
+'App\Controllers\CatalogController#product',
+'catalog-product');
 
-$router->map('GET', '/account/login', 'App\Controllers\UserController#loginPage');
-$router->map('POST', '/account/login', 'App\Controllers\UserController#login');
+$router->map('GET',
+'/account/login',
+'App\Controllers\CustomerController#loginPage',
+'customer-loginPage');
 
-$router->map('GET', '/account/logout', 'App\Controllers\UserController#logout' );
+$router->map('POST',
+'/account/login',
+'App\Controllers\CustomerController#login',
+'customer-login');
 
-$router->map('GET', '/account/register', 'App\Controllers\UserController#registerUserPage' );
-$router->map('POST','/account/register', 'App\Controllers\UserController#registerUser');
+$router->map('GET',
+'/account/logout',
+'App\Controllers\CustomerController#logout',
+'customer-logout');
+
+$router->map('GET',
+'/account/register',
+'App\Controllers\CustomerController#registerCustomerPage',
+'customer-registerCustomerPage');
+
+$router->map('POST',
+'/account/register',
+'App\Controllers\CustomerController#registerCustomer',
+'customer-registerCustomer');
 
 
 

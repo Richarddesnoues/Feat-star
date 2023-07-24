@@ -39,13 +39,6 @@ class Product {
         }
       }
 
-
-
-
-
-
-
-
     static public function find($id) {
 
         try {

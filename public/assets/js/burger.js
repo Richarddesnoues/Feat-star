@@ -34,10 +34,6 @@ function openMenu() {
     })
 }
 
-
-
-
-
 openMenu();
 
 

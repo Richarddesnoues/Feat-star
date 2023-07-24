@@ -1,4 +1,3 @@
-
 <?php global $router; ?>
 <!DOCTYPE html>
 <html lang="fr">
@@ -36,20 +35,21 @@
             <ul class="nav_items">
 
                 <!-- volet menu burger -->
-                <?php if (!isset($_SESSION['userId'])) : ?>
-                <li class="volet_connection">
-                    <a href="<?= $router->url('account/login') ?>">Se connecter </a>   
-                    <?php else: ?>
-                <li class="volet_disconnect">
-                    <a href="<?= $router->url('account/logout') ?>">Deconnexion </a>          
-                </li>
-                    <?php endif; ?>
-                
+                <?php if (!isset($_SESSION['customerId'])) : ?>
+                    <li class="volet_connection">
+                        <a href="<?= $router->url('account/login') ?>">Se connecter </a>
+                    <?php else : ?>
+                    <li class="volet_disconnect">
+                        <a href="<?= $router->url('account/logout') ?>">Deconnexion . </a>
+
+                    </li>
+                <?php endif; ?>
+
                 <!-- / menu burger -->
-                
+
                 <?php $categories = App\Models\Category::findAll();
                 foreach ($categories as $cat) {
-                    echo '<li class="navItem"><a href="' . $router->url('catalogue/categorie/' . $cat->id) .'"> '.$cat->name.'</a></li>';
+                    echo '<li class="navItem"><a href="' . $router->url('catalogue/categorie/' . $cat->id) . '"> ' . $cat->name . '</a></li>';
                 } ?>
 
             </ul>
@@ -59,23 +59,28 @@
                 <!-- <div class="user_login"> -->
                 <i class="fa fa-user"></i>
                 <!-- </div> -->
-                <?php if (!isset($_SESSION['userId'])) : ?>
+                <?php if (!isset($_SESSION['customerId'])) : ?>
                     <li class="connect">
                         <a href="<?= $router->url('account/login') ?>">
                             <p>Connexion</p>
+
                         </a>
                     </li>
-                <?php else: ?>
-                    <li class ="disconect">
+                <?php else : ?>
+                    <li class="disconect">
                         <a href="<?= $router->url('account/logout') ?>">
+                            <!-- # ToDo Mettre le pseudo du client -->
                             <p>Deconnexion</p>
+                            <!-- <?= $_SESSION['pseudo'] ?>Deconnexion  -->
+                            <!-- <?= dump($_SESSION['pseudo'])?> -->
+                            
                         </a>
                     </li>
-                <?php endif; ?>
-            </div>
+                    <?php endif; ?>
+                </div>
 
             <div class="cart">
-                <a href="<?= $router->url('panier')?>">
+                <a href="<?= $router->url('cart') ?>">
                     <i class="fa-solid fa-cart-shopping"></i><span>0</span>
                     <!-- <p>Mon panier</p> -->
                 </a>

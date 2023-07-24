@@ -13,10 +13,10 @@
     <form class="form" action ="<?= $router->url('account/login') ?>" method="post">
         <div class="form_group">
         
-            <input value=""type="email" id="email" name="email" placeholder="Saisissez votre adress email..." >
+            <input type="email" id="email" name="email" placeholder="Saisissez votre adress email..." >
             <div class="mdp_group">
                 
-                <input value="" type="password" id="password" name="password" placeholder="Entrez votre mot de passe">
+                <input type="password" id="password" name="password" placeholder="Entrez votre mot de passe">
                 <div class="mdp">
                     <a href="#"><p>Mot de passe oublié ?</p></a>
                 </div>

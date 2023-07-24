@@ -5,13 +5,10 @@
         </div> -->
         <div class="bloc_produit_basket">
             <div class="basket_bloc_produit">
-
                 <div class="basket_title">
                     <h1>Mon panier(1 Produit)</h1>
                 </div>
                 <div class="main_bloc_produit">
-
-                
                     <div class="bloc_produit">
                         <div class="img_produit">
                             <div class="little_img">
@@ -26,7 +23,6 @@
                             <div class="price_ttc">
                                 <p>579€</p>
                             </div>
-
                             <span class="product_quantity">
                                 <select class="product_dropdown">
                                     <option value="1">1</option>
@@ -49,9 +45,6 @@
                     </div>
                 </div>
             </div>
-
-
-
             <div class="recap_basket">
                 <div class="recap_title">
                     <h1>Récapitulatif

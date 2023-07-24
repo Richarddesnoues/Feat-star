@@ -46,6 +46,7 @@
         </footer>
         <script src="<?= $router->url('assets/js/burger.js')?>"></script>
         <script src="<?= $router->url('assets/js/app.js')?>"></script>
+        <script src="<?= $router->url('assets/js/menu_active.js')?>"></script>
     </body>
 
 </html>

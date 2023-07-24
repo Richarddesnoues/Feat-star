@@ -1,10 +1,10 @@
-let app = {
-    init: function(){
-        let fieldUsername = document.querySelector(.)
-        console.log("ça marche!");
-    }
-}
+// let app = {
+//     init: function(){
+//         let fieldUsername = document.querySelector(.)
+//         console.log("ça marche!");
+//     }
+// }
 
 
 
-document.addEventListener('DOMContentLoaded' , app.init);
+// document.addEventListener('DOMContentLoaded' , app.init);

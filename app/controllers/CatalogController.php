@@ -17,9 +17,6 @@ class CatalogController extends CoreController {
 
     }
 
-   
-    
-    
     public function category($params) {
         $category = Category::find($params['id']);
         

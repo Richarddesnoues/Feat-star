@@ -8,9 +8,9 @@
 DROP TABLE IF EXISTS `product` ;
 
 CREATE TABLE IF NOT EXISTS `product` (
-  `id` INT UNSIGNED NOT NULL AUTO_INCREMENT,
+ `id` INT UNSIGNED NOT NULL AUTO_INCREMENT,
   `name` VARCHAR(45) NOT NULL COMMENT 'Le nom du produit',
-  `description` TEXT NULL COMMENT 'La description du produit',
+  `description` TEXT NULL COMMENT  'La description du produit',
   `picture` VARCHAR(128) NULL COMMENT 'L\'URL de l\'image du produit',
   `price` DECIMAL(10,2) NOT NULL DEFAULT 0 COMMENT 'Le prix du produit',
   `status` TINYINT(1) NOT NULL DEFAULT 0 COMMENT 'Le statut du produit (1=dispo, 2=pas dispo)',
